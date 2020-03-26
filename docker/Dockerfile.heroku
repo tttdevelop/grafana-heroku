@@ -1,0 +1,7 @@
+
+ENV PORT 5000
+
+COPY docker/heroku-start.sh /
+
+ENTRYPOINT [ "" ]
+CMD [ "sh", "/heroku-start.sh" ]

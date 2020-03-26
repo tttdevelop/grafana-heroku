@@ -1,0 +1,13 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+  config:
+    GF_ENABLE_GZIP: "true"
+    GF_SECURITY_ADMIN_USER: "admin_user_name"
+build:
+  config:
+    GRAFANA_VERSION: "latest"
+    GF_INSTALL_PLUGINS: "grafana-googlesheets-datasource,andig-darksky-datasource"
+  docker:
+    web: Dockerfile
